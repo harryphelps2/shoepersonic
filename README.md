@@ -1,5 +1,7 @@
 # Shoepersonic.com
 
+[![Build Status](https://travis-ci.org/harryphelps2/shoepersonic.svg?branch=master)](https://travis-ci.org/harryphelps2/shoepersonic)
+
 A website to answer the most important question of all:
 
     Will it make me faster?
