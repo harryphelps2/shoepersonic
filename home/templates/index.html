@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>shoepersonic.com</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>Hello world! I'm shoepersonic.com</h1>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block page_title %}Shoepersonic{% endblock %}
+{% block content %}
+<div style="font-family: 'Contrail One', regular;">
+    <h1 class="display-1">We are shoepersonic.com</h1>
+</div>
+<div>
+    <p style="font-family: 'Montserrat', sans-serif;">Answering the most important question of all:</p>
+</div>
+<div>
+    <p style="font-family: 'Montserrat', sans-serif;">Will it make me faster?</p>
+</div>
+{% endblock %}
