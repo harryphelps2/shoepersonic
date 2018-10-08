@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Check out these shoes</h1>
+{% for shoe in all_shoes %}
+
+<p>{{ shoe.name }}</p>
+
+{% endfor %}
+{% endblock %}
