@@ -23,3 +23,4 @@ then
 2. Install django
 
 ```pip install django```
+

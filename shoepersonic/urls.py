@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path
 from home.views import index
+from accounts import urls as account_urls 
 from django.urls import path, re_path, include
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
@@ -26,6 +27,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('accounts/', include(account_urls)),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^pages/', include(wagtail_urls)),

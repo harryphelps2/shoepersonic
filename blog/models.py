@@ -15,6 +15,13 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 
 
+class HomePage(Page):
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+    ]
+    
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 

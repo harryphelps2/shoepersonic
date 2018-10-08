@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'blog',
+    'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
