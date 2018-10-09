@@ -2,8 +2,8 @@ from django.db import models
 
 SHOE_TYPE_CHOICES = [
     ('flats', 'FLATS'),
-    ('track spikes', 'TRACK SPIKES'),
-    ('cross country spikes', 'CROSS COUNTRY SPIKES'),
+    ('track spikes', 'TRACK_SPIKES'),
+    ('cross country spikes', 'CROSS_COUNTRY_SPIKES'),
     ('pluggers', 'PLUGGERS')
 ]
 

@@ -21,7 +21,7 @@ def user_login(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "You have successfully logged in")
-                return redirect(reverse('dashboard'))
+                return redirect(reverse('index'))
             else:
                 messages.error(request, "Your username or password is incorrect")
     else:

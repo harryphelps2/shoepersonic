@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Cross Country spikes</h1>
+{% for shoe in xc_spikes %}
+
+<p>{{ shoe.brand }} {{ shoe.name }}</p>
+
+{% endfor %}
+{% endblock %}

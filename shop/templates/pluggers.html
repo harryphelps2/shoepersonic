@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Pluggers</h1>
+{% for shoe in pluggers %}
+
+<p>{{ shoe.brand }} {{ shoe.name }}</p>
+
+{% endfor %}
+{% endblock %}
