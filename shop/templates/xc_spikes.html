@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Cross Country spikes</h1>
-{% for shoe in xc_spikes %}
-
-<p>{{ shoe.brand }} {{ shoe.name }}</p>
-
-{% endfor %}
+<div class="card-group">
+    {% for shoe in xc_spikes %}
+        <div class="card text-white bg-dark" style="width: 18rem; margin: 5%;">
+            <div class="card-header">
+                <h2 class="card-title">{{shoe.brand}} {{ shoe.name }}</h2>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ shoe.description}}</p>
+                <button class="minus" disabled>-</button>
+                <span class="quantity" name="quantity">1</span>
+                <button class="plus">+</button>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <button class="add-to-cart" type="submit" value="1" name="quantity">Add to Cart</button>
+                </form>
+                <h4>£{{ shoe.price }}</h4>
+            </div>
+        </div>
+    {% endfor %} 
+</div>   
 {% endblock %}
