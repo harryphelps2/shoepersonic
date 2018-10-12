@@ -19,13 +19,11 @@
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cross Country Spikes</a>
                                 <div class="dropdown-menu" aria-labelledby="shopDropdown">
                                     <a class="dropdown-item" href="{% url 'all_shoes' %}">All shoes</a>
-                                    <a class="dropdown-item" href="{% url 'flats' %}">Flats</a>
-                                    <a class="dropdown-item" href="{% url 'pluggers' %}">Pluggers </a>
-                                    <a class="dropdown-item" href="{% url 'xc_spikes' %}">Cross Country Spikes</a>
-                                    <a class="dropdown-item" href="{% url 'track_spikes' %}">Track Spikes</a>
+                                    <a class="dropdown-item" href="{% url 'xc_spikes' %}">Por Homme</a>
+                                    <a class="dropdown-item" href="{% url 'track_spikes' %}">Por Femme</a>
                                 </div>
                             </li> 
                             <li class="nav-item">

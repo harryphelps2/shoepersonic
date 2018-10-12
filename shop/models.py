@@ -15,6 +15,8 @@ class Shoe(models.Model):
     shoe_type = models.CharField(max_length=50, choices=SHOE_TYPE_CHOICES)
     weight = models.IntegerField()
     drop_height = models.IntegerField()
+    price = models.IntegerField()
+    primary_image = models.ImageField()
 
     def __str__(self):
         return self.name
