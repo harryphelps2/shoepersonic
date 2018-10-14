@@ -8,31 +8,45 @@ def all_shoes(request):
     all_shoes = Shoe.objects.all()
     return render(request, 'all_shoes.html', {'all_shoes':all_shoes})
 
-def track_spikes(request):
+def shoes_for_him(request):
     """
     View track spikes.
     """
     track_spikes = Shoe.objects.filter(shoe_type="track spikes")
     return render(request, 'track_spikes.html', {'track_spikes':track_spikes})
 
-def xc_spikes(request):
+def shoes_for_her(request):
     """
     View xc spikes.
     """
     xc_spikes = Shoe.objects.filter(shoe_type="cross country spikes")
     return render(request, 'xc_spikes.html', {'xc_spikes':xc_spikes})
 
-def pluggers(request):
+def shoe_detail(request, shoe_id):
     """
-    View pluggers.
+    View to show detailed information about shoe and add to cart
     """
-    pluggers = Shoe.objects.filter(shoe_type="pluggers")
-    return render(request, 'pluggers.html', {'pluggers':pluggers})
+    shoe = Shoe.objects.get(pk=shoe_id)
+    return render(request, 'shoe_detail.html', {'shoe':shoe})
 
 
-def flats(request):
+def shoe_compare(request):
     """
-    View flats.
+    View to compare testing stats across shoe range
     """
-    flats = Shoe.objects.filter(shoe_type="flats")
-    return render(request, 'flats.html', {'flats':flats})
+    pass
+
+# def pluggers(request):
+#     """
+#     View pluggers.
+#     """
+#     pluggers = Shoe.objects.filter(shoe_type="pluggers")
+#     return render(request, 'pluggers.html', {'pluggers':pluggers})
+
+
+# def flats(request):
+#     """
+#     View flats.
+#     """
+#     flats = Shoe.objects.filter(shoe_type="flats")
+#     return render(request, 'flats.html', {'flats':flats})

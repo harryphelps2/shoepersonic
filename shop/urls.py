@@ -1,10 +1,7 @@
-from django.urls import path, include, reverse_lazy
-from .views import all_shoes, track_spikes, xc_spikes, pluggers, flats
+from django.urls import path, re_path, include, reverse_lazy
+from .views import all_shoes, shoe_detail
 
 urlpatterns = [
     path('all_shoes/', all_shoes, name="all_shoes"),
-    path('flats/', flats, name="flats"), 
-    path('xc_spikes/', xc_spikes, name="xc_spikes"),
-    path('pluggers/', pluggers, name="pluggers"),
-    path('track_spikes/', track_spikes, name="track_spikes"),
+    re_path(r'^shoe_detail/(?P<shoe_id>\d+)/$', shoe_detail, name='shoe_detail'),
 ]

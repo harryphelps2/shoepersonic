@@ -12,7 +12,10 @@
         {% for shoe in all_shoes %}
         <div class="carousel-item {% if forloop.first %} active {% endif %}">
             <h2>{{ shoe.brand }} {{ shoe.name }}</h2>
-            <img class="d-block w-100" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
+            
+            <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+                <img class="d-block w-100" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
+            </a>
         </div>
         {% endfor %}
     </div>
