@@ -6,7 +6,7 @@
     {% for item in cart_items  %}
         <div class="row cart">
             <div class="cart__image">
-                <img src="{{ MEDIA_URL }}{{ item.product.image }}" alt="{{ print.title }}" class="img-thumbnail">
+                <img src="{{ MEDIA_URL }}{{ item.product.primary_image }}" alt="{{ print.title }}" class="img-thumbnail">
             </div>
             <div class="cart__details">
                 <h3>{{ item.product.name }}</h3>
@@ -24,5 +24,8 @@
     {% endfor %}
     <div class="cart-total">
         <h3>Total: £{{total}}</h3>
+    </div>
+    <div>
+        <button><a href="#">Go to Secure Checkout</a></button>
     </div>
 {% endblock %}

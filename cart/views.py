@@ -8,6 +8,7 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     """Add a quantity product to cart"""
+    # build in check that stops them submitting if they don't select size
     quantity = int(request.POST.get('quantity'))
     size = int(request.POST.get('size'))
     line_id = f"{id}-{size}"
@@ -31,10 +32,8 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id, size):
     """Adjust quantity of the product to the specified amount"""
-    # in the form we get the new quantity and the id of the shoe
     quantity = int(request.POST.get('new_quantity'))
     cart = request.session.get('cart', {})
-    # in the cart we get {'3-8': {'quantity': 3, 'size': 8}}
     line_id = f"{id}-{size}"
     print(line_id) 
 
