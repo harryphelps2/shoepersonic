@@ -3,12 +3,17 @@
 <h1>Check out these shoes</h1>
 <div class="card-group">
     {% for shoe in all_shoes %}
-        <div class="card text-white bg-dark" style="width: 18rem; margin: 5%;">
+        <div class="card text-white bg-dark">
             <div class="card-header">
-                <h2 class="card-title">{{shoe.brand}} {{ shoe.name }}</h2>
+                <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+                    <h2 class="card-title">{{shoe.brand}} {{ shoe.name }}</h2>
+                </a>
             </div>
             <div class="card-body">
-                <p class="card-text">{{ shoe.description}}</p>
+                <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
+                </a>
+                <p class="card-text">{{ shoe.description|truncatewords:20 }}<a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">Read more</a></p>
                 <button class="minus" disabled>-</button>
                 <span class="quantity" name="quantity">1</span>
                 <button class="plus">+</button>

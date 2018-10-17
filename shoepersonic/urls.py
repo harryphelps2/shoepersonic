@@ -10,12 +10,14 @@ from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 from django.conf.urls.static import static
 from shop import urls as shop_urls
+from cart import urls as cart_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('accounts/', include(account_urls)),
     path('shop/', include(shop_urls)),
+    path('cart/', include(cart_urls)),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^pages/', include(wagtail_urls)),

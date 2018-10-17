@@ -1,10 +1,15 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 SHOE_TYPE_CHOICES = [
     ('flats', 'FLATS'),
     ('track spikes', 'TRACK_SPIKES'),
     ('cross country spikes', 'CROSS_COUNTRY_SPIKES'),
     ('pluggers', 'PLUGGERS')
+]
+
+SHOE_SIZE_CHOICES = [
+    ('6','6')
 ]
 
 class Shoe(models.Model):
@@ -22,14 +27,23 @@ class Shoe(models.Model):
         return self.name
     
     
+class StockLevel(models.Model):
+    shoe_model = models.ForeignKey("Shoe", on_delete=models.CASCADE)
+    size = models.IntegerField(default=10,
+        validators=[MaxValueValidator(15), MinValueValidator(1)])
+    stock = models.IntegerField(default=10)
+
+    def __str__(self):
+        stock_entry = "{0} size {1} has {2} left".format(self.shoe_model, self.size, self.stock)
+        return stock_entry
+    
+
 
 """
-
 model for stock:
 id:
 shoe(id):
 size:
-gender:
 stock level:
 
 model for shoe images:
