@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def checkout(request):
+    """Make payment"""
+    return render(request, 'checkout.html')
