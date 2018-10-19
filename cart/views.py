@@ -11,7 +11,7 @@ def add_to_cart(request, id):
     # build in check that stops them submitting if they don't select size
     quantity = int(request.POST.get('quantity'))
     size = int(request.POST.get('size'))
-    line_id = f"{id}-{size}"
+    line_id = "{0}-{1}".format(id, size)
 
     cart = request.session.get('cart', {})
 
