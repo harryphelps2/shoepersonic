@@ -11,6 +11,7 @@ from wagtail.core import urls as wagtail_urls
 from django.conf.urls.static import static
 from shop import urls as shop_urls
 from cart import urls as cart_urls
+from reviews import urls as review_urls
 from checkout import urls as checkout_urls
 
 urlpatterns = [
@@ -20,6 +21,7 @@ urlpatterns = [
     path('shop/', include(shop_urls)),
     path('cart/', include(cart_urls)),
     path('checkout/', include(checkout_urls)),
+    path('reviews/'), include(review_urls)
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
