@@ -34,7 +34,7 @@ def adjust_cart(request, id, size):
     """Adjust quantity of the product to the specified amount"""
     quantity = int(request.POST.get('new_quantity'))
     cart = request.session.get('cart', {})
-    line_id = f"{id}-{size}"
+    line_id = "{0}-{1}".format(id, size)
     print(line_id) 
 
     if quantity > 0:
