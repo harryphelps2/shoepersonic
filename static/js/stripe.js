@@ -1,3 +1,4 @@
+//Publishable key
 var stripe = Stripe('pk_test_oGzjqmtiyqFycxaJ7nO1aTgL');
 var elements = stripe.elements();
 
@@ -51,3 +52,16 @@ form.addEventListener('submit', function(event) {
     }
   });
 });
+
+function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+  
+    // Submit the form
+    form.submit();
+  };
