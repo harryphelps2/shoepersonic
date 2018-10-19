@@ -21,7 +21,7 @@ urlpatterns = [
     path('shop/', include(shop_urls)),
     path('cart/', include(cart_urls)),
     path('checkout/', include(checkout_urls)),
-    path('reviews/'), include(review_urls)
+    path('reviews/', include(review_urls)),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
