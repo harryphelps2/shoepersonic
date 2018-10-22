@@ -16,6 +16,7 @@ class Shoe(models.Model):
     brand = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     colour = models.CharField(max_length=50)
+    strapline = models.TextField()
     description = models.TextField()
     shoe_type = models.CharField(max_length=50, choices=SHOE_TYPE_CHOICES)
     weight = models.IntegerField()

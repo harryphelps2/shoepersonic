@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
-<div>
-    <h2>Cross country season is here!</h2>
-</div>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        {% for shoe in all_shoes %}
-        <div class="carousel-item {% if forloop.first %} active {% endif %}">
-            <h2>{{ shoe.brand }} {{ shoe.name }}</h2>
-            
-            <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
-                <img class="d-block w-100" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
-            </a>
-        </div>
-        {% endfor %}
+<div class="position-relative overflow-hidden p3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
+        <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+</div>
+<div class="container-fluid">
+    {% for shoe in all_shoes %}
+    <div class="card bg-dark text-black">
+        <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
+            <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
+                    <p class="card-text">{{ shoe.strapline }}</p>
+                </div>
+            </a> 
+        </div>
+    {% endfor %}
 </div>
 <div>
-    <h2>About us</h2>
-    <p>We are a start-up running shoe seller born out of the frustration of trying to buy running shoes that are 
-        that are super fast.
+    <h2>Who are we?</h2>
+    <p>I love running. i run to work in central London throughout the week and then 
+        race around the Great British Countryside all weekend. I've always struggled to find stock of 
+        the fastest running shoes in one place. Whenever I go into a running shop they always have very limited choice of 
+        racing shoes and whenever I look online the choice is overwhelming but there is never enough detail about the shoe and what they are 
+        like to run in for me to make an informed decision. I set up this shop to change that. We take the leading 
+        models of a particular type of shoe and go and run around in them... a lot. We then report back on the best aspects of
+        each shoe to help you make the best investment and race the fastest.
+
+        Our pricing fairly reflects the cost of selling the shoe to you. We're a small family run business and we do't have 
+        any economies of scale. We buy all the shoes we test and seek to highlight there best features so you can make an informed decision.
     </p>
 </div>
 {% endblock %}

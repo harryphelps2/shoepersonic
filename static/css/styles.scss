@@ -1,3 +1,7 @@
+/* General */
+
+  
+  /* Stripe */
 .StripeElement {
     background-color: white;
     height: 40px;
@@ -21,3 +25,26 @@
   .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
   }
+
+
+/* Home Page */
+
+.front-page-image-div-even{
+    width: 70%;
+    border-radius: 21px 21px 0 0;
+    margin-bottom: 10%;
+  }
+
+  .front-page-image-div-odd{
+    width: 70%;
+    border-radius: 21px 21px 0 0;
+    margin-bottom: 10%;
+  }
+
+  .front-page-image{
+    border-radius: 21px; 
+    width: 50%;
+  }
+
+  
+  /* Shoe Detail Page */

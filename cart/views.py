@@ -15,8 +15,6 @@ def add_to_cart(request, id):
 
     cart = request.session.get('cart', {})
 
-    # if the line id not in the basket
-    # add to basket with quanitityt of 0
     if line_id not in cart:
         cart[line_id] = {
             'quantity': 0,
@@ -26,8 +24,7 @@ def add_to_cart(request, id):
     cart[line_id]["quantity"] += quantity
 
     request.session['cart'] = cart
-    print(cart)
-    # redirect to spike store?
+
     return redirect(reverse('view_cart'))
 
 def adjust_cart(request, id, size):
