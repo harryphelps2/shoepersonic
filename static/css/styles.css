@@ -1,4 +1,8 @@
 /* General */
+footer div {
+  background-color: green;
+}
+
 /* Stripe */
 .StripeElement {
   background-color: white;
@@ -42,6 +46,38 @@
   width: 50%;
 }
 
+.front-page-about-us {
+  padding: 2rem;
+}
+
 /* Shoe Detail Page */
+.add-to-cart-card {
+  margin: 5%;
+}
+
+.price-and-quantity-container .price {
+  width: 50%;
+}
+.price-and-quantity-container .quantity-chooser {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+.price-and-quantity-container .quantity-chooser button {
+  height: 2rem;
+  width: 2rem;
+  color: black;
+  border-color: black;
+  border-radius: 0.2rem;
+}
+.price-and-quantity-container .quantity-chooser .quantity {
+  font-size: larger;
+  margin: 5%;
+}
+
+.size-chooser {
+  margin-bottom: 5%;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -28,6 +28,9 @@
                             </div>
                         </li> 
                         <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_cart' %}">Cart</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/pages/blog">Blog</a>
                         </li>
                         <li class="nav-item">
@@ -68,6 +71,51 @@
             {% block content %}
             {% endblock %}
         </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>Shop</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#">Mens</a>
+                            </li>
+                            <li>
+                                <a href="#">Womens</a>
+                            </li>
+                            <li>
+                                <a href="#">Spike packets</a>
+                            </li>
+                            <li>
+                                <a href="#">All products</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>About Us</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#">Our story</a>
+                            </li>
+                            <li>
+                                <a href="#">About our reviews</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Delivery</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Stay connected</h3>
+                        <p>Sign up to our email list:</p>
+                        <input type="email" name="mailinglist" id="">
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

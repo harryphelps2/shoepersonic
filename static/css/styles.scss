@@ -1,50 +1,95 @@
 /* General */
 
+// Footer
+
+footer{
+    div{
+        background-color: green;
+    }
+}
   
   /* Stripe */
-.StripeElement {
-    background-color: white;
-    height: 40px;
-    width: 30%;
-    padding: 1.0rem 1.2rem;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
-  }
-  
-  .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
-  }
-  
-  .StripeElement--invalid {
-    border-color: #fa755a;
-  }
-  
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
-  }
+    .StripeElement {
+        background-color: white;
+        height: 40px;
+        width: 30%;
+        padding: 1.0rem 1.2rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        box-shadow: 0 1px 3px 0 #e6ebf1;
+        -webkit-transition: box-shadow 150ms ease;
+        transition: box-shadow 150ms ease;
+    }
+    
+    .StripeElement--focus {
+        box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+    
+    .StripeElement--invalid {
+        border-color: #fa755a;
+    }
+    
+    .StripeElement--webkit-autofill {
+        background-color: #fefde5 !important;
+    }
 
 
 /* Home Page */
 
-.front-page-image-div-even{
+    .front-page-image-div-even{
+        width: 70%;
+        border-radius: 21px 21px 0 0;
+        margin-bottom: 10%;
+    }
+
+    .front-page-image-div-odd{
     width: 70%;
     border-radius: 21px 21px 0 0;
     margin-bottom: 10%;
-  }
+    }
 
-  .front-page-image-div-odd{
-    width: 70%;
-    border-radius: 21px 21px 0 0;
-    margin-bottom: 10%;
-  }
-
-  .front-page-image{
+    .front-page-image{
     border-radius: 21px; 
     width: 50%;
+    }
+
+    .front-page-about-us{
+        padding:2rem;
+    }
+
+  /* Shoe Detail Page */
+
+  .add-to-cart-card{
+      margin: 5%;
   }
 
-  
-  /* Shoe Detail Page */
+  .price-and-quantity-container{
+
+    .price {
+        width: 50%;
+        }
+
+    .quantity-chooser{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 5%;
+
+        button{
+        height: 2.0rem;
+        width: 2.0rem;
+        color: black;
+        border-color: black;
+        border-radius: 0.2rem;
+        }
+
+        .quantity{
+            font-size: larger;
+            margin: 5%;
+        }
+    }
+    }
+
+  .size-chooser{
+      margin-bottom: 5%;
+  }

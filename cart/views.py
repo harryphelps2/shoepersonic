@@ -9,6 +9,7 @@ def view_cart(request):
 def add_to_cart(request, id):
     """Add a quantity product to cart"""
     # build in check that stops them submitting if they don't select size
+    
     quantity = int(request.POST.get('quantity'))
     size = int(request.POST.get('size'))
     line_id = "{0}-{1}".format(id, size)
