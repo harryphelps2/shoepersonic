@@ -17,12 +17,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='stocklevel',
-            name='id',
-            field=models.AutoField(auto_created=True, default=1, primary_key=True, serialize=False, verbose_name='ID'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='stocklevel',
             name='shoe_model',
             field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='shop.Shoe'),
             preserve_default=False,

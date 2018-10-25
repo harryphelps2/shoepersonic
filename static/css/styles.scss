@@ -3,9 +3,14 @@
 // Footer
 
 footer{
-    div{
-        background-color: green;
+    background-color:grey;
+    opacity: 0.5; 
+    margin-top: 5%;
+
+    .footer-contents{
+        padding-top: 10%;
     }
+
 }
   
   /* Stripe */
@@ -93,3 +98,27 @@ footer{
   .size-chooser{
       margin-bottom: 5%;
   }
+
+  .add-to-cart-button{
+      margin: 10%;
+  }
+
+//   Cart
+
+.cart{
+    &__row{
+        padding: 2% 5%;
+    }
+    &__image{
+        width: 10rem;
+      // background-image: url("{{ MEDIA_URL }}{{ shoe.primary_image }}")
+    }
+    &__adjust{
+        width: 80%;
+        margin-left: 2%;
+
+        &__quantity{
+            
+        }
+    }
+}

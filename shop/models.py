@@ -29,6 +29,7 @@ class Shoe(models.Model):
     
     
 class StockLevel(models.Model):
+    id = models.BigIntegerField(primary_key=True)
     shoe_model = models.ForeignKey("Shoe", on_delete=models.CASCADE)
     size = models.IntegerField(default=10,
         validators=[MaxValueValidator(15), MinValueValidator(1)])
@@ -38,17 +39,3 @@ class StockLevel(models.Model):
         stock_entry = "{0} size {1} has {2} left".format(self.shoe_model, self.size, self.stock)
         return stock_entry
     
-
-
-"""
-model for stock:
-id:
-shoe(id):
-size:
-stock level:
-
-model for shoe images:
-shoe(id):
-image:
-
-"""

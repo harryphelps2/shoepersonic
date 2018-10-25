@@ -8,13 +8,13 @@ from .models import OrderLineItem
 from shoepersonic import settings
 import stripe
 
+
 stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required
 def checkout(request):
     """Make payment"""
-    # set publishable key and pass in as context below in return render statement
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         if order_form.is_valid():

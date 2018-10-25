@@ -1,6 +1,11 @@
 /* General */
-footer div {
-  background-color: green;
+footer {
+  background-color: grey;
+  opacity: 0.5;
+  margin-top: 5%;
+}
+footer .footer-contents {
+  padding-top: 10%;
 }
 
 /* Stripe */
@@ -78,6 +83,21 @@ footer div {
 
 .size-chooser {
   margin-bottom: 5%;
+}
+
+.add-to-cart-button {
+  margin: 10%;
+}
+
+.cart__row {
+  padding: 2% 5%;
+}
+.cart__image {
+  width: 10rem;
+}
+.cart__adjust {
+  width: 80%;
+  margin-left: 2%;
 }
 
 /*# sourceMappingURL=styles.css.map */

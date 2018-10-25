@@ -3,10 +3,9 @@
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
 <h1>{{ shoe.brand }} {{ shoe.name }}</h1>
-<h1>Stock: </h1>
 <div class="row align-items-center">
-    <div class="media">
-        <img height="315" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
+    <div class="">
+        <img src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
     </div>
     <div class="card text-white bg-dark add-to-cart-card">
         <div class="card-body">
@@ -31,14 +30,26 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <button class="btn add-to-cart-button" type="submit" value="1" name="quantity">Add to Cart</button>
+                    <button class="btn btn-success add-to-cart-button" type="submit" value="1" name="quantity">Add to Cart</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 <div>
+    <h2>Specifications</h2>
+    <ul>
+        <li>Weight: {{ shoe.weight }} grams</li>
+        <li>Best for: </li>
+        <li>Be careful of: </li>
+    </ul>
+</div>
+<div>
     <h2>What we think</h2>
     <p>{{ shoe.description }}</p>
+</div>
+<div>
+    <h2>Compare</h2>
+
 </div>
 {% endblock %}
