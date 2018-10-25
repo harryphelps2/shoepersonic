@@ -29,7 +29,6 @@ class Shoe(models.Model):
     
     
 class StockLevel(models.Model):
-    id = models.BigIntegerField(primary_key=True)
     shoe_model = models.ForeignKey("Shoe", on_delete=models.CASCADE)
     size = models.IntegerField(default=10,
         validators=[MaxValueValidator(15), MinValueValidator(1)])

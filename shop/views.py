@@ -28,27 +28,4 @@ def shoe_detail(request, shoe_id):
     """
     shoe = Shoe.objects.get(pk=shoe_id)
     stock_level = StockLevel.objects.filter(shoe_model = shoe_id)
-    print(stock_level)
     return render(request, 'shoe_detail.html', {'shoe':shoe, 'stock_level':stock_level})
-
-
-def shoe_compare(request):
-    """
-    View to compare testing stats across shoe range
-    """
-    pass
-
-# def pluggers(request):
-#     """
-#     View pluggers.
-#     """
-#     pluggers = Shoe.objects.filter(shoe_type="pluggers")
-#     return render(request, 'pluggers.html', {'pluggers':pluggers})
-
-
-# def flats(request):
-#     """
-#     View flats.
-#     """
-#     flats = Shoe.objects.filter(shoe_type="flats")
-#     return render(request, 'flats.html', {'flats':flats})
