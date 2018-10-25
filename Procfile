@@ -1,1 +1,1 @@
-web: gunicorn shopersonic.wsgi:application
+web: gunicorn shoepersonic.wsgi:application
