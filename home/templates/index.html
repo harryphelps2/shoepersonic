@@ -11,7 +11,7 @@
     {% for shoe in all_shoes %}
     <div class="card bg-dark text-black">
         <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
-            <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+            <a href="{% url 'shoe_detail' shoe.id %}">
                 <div class="card-img-overlay">
                     <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
                     <p class="card-text">{{ shoe.strapline }}</p>

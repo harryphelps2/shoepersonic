@@ -22,10 +22,11 @@ def shoes_for_her(request):
     xc_spikes = Shoe.objects.filter(shoe_type="cross country spikes")
     return render(request, 'xc_spikes.html', {'xc_spikes':xc_spikes})
 
-def shoe_detail(request, shoe_id):
+def shoe_detail(request, id):
     """
     View to show detailed information about shoe and add to cart
     """
-    shoe = Shoe.objects.get(pk=shoe_id)
-    stock_level = StockLevel.objects.filter(shoe_model = shoe_id)
+    shoe = Shoe.objects.get(pk=id)
+    print(shoe)
+    stock_level = StockLevel.objects.filter(shoe_model = shoe)
     return render(request, 'shoe_detail.html', {'shoe':shoe, 'stock_level':stock_level})

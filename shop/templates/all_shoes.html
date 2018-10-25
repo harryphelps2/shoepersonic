@@ -10,10 +10,10 @@
                 </a>
             </div>
             <div class="card-body">
-                <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
+                <a href="{% url 'shoe_detail' shoe.id %}">
                     <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
                 </a>
-                <p class="card-text">{{ shoe.description|truncatewords:20 }}<a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">Read more</a></p>
+                <p class="card-text">{{ shoe.description|truncatewords:20 }}<a href="{% url 'shoe_detail' shoe.id %}">Read more</a></p>
                 <button class="minus" disabled>-</button>
                 <span class="quantity" name="quantity">1</span>
                 <button class="plus">+</button>

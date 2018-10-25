@@ -3,5 +3,5 @@ from .views import all_shoes, shoe_detail
 
 urlpatterns = [
     path('all_shoes/', all_shoes, name="all_shoes"),
-    re_path(r'^shoe_detail/(?P<shoe_id>\d+)/$', shoe_detail, name='shoe_detail'),
+    re_path(r'^shoe_detail/(?P<id>\d+)/$', shoe_detail, name='shoe_detail'),
 ]
