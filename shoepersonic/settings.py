@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shoepersonic.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['shoepersonic.herokuapp.com', '127.0.0.1', 'shoepersonic.com']
 
 
 # Application definition
@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     'checkout',
     'reviews',
     'storages',
-    'shoepersonic.com',
 ]
 
 MIDDLEWARE = [
