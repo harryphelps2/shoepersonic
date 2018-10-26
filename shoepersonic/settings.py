@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'checkout',
     'reviews',
     'storages',
+    'shoepersonic.com',
 ]
 
 MIDDLEWARE = [
