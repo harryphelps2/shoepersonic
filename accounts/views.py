@@ -12,7 +12,7 @@ def index(request):
 def user_login(request):
     """View that returns the login form"""
     if request.user.is_authenticated:
-        return redirect(reverse('dashboard'))
+        return redirect(reverse('index'))
     if request.method == 'POST':
         user_form = UserLoginForm(request.POST)
         if user_form.is_valid():
