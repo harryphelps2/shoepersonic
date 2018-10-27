@@ -34,16 +34,9 @@ footer .footer-contents {
 }
 
 /* Home Page */
-.front-page-image-div-even {
-  width: 70%;
-  border-radius: 21px 21px 0 0;
-  margin-bottom: 10%;
-}
-
-.front-page-image-div-odd {
-  width: 70%;
-  border-radius: 21px 21px 0 0;
-  margin-bottom: 10%;
+.front-page-image {
+  height: auto;
+  width: 100%;
 }
 
 .front-page-about-us {

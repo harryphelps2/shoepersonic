@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
-<div class="position-relative overflow-hidden p3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
-        <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
+<div class="container-fluid">
+    <div class="text-center front-page-image" style="background-image: url('static/img/all_shoes_in_line.JPG')">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
+            <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
+        </div>
     </div>
 </div>
 <div class="container">
     {% for shoe in all_shoes %}
     <div class="card bg-dark text-black">
         <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
-            <a href="{% url 'shoe_detail' shoe.id %}">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
-                    <p class="card-text">{{ shoe.strapline }}</p>
-                </div>
-            </a> 
-        </div>
+        <a href="{% url 'shoe_detail' shoe.id %}">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
+                <p class="card-text">{{ shoe.strapline }}</p>
+            </div>
+        </a> 
+    </div>
     {% endfor %}
 </div>
 <div class="front-page-about-us">

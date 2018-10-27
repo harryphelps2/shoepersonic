@@ -7,57 +7,41 @@
         <title>{% block page_title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="{% url 'index' %}">Shoepersonic BETA</a>
+                <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-fighter-jet"></i>Shoepersonic BETA</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cross Country Spikes</a>
-                            <div class="dropdown-menu" aria-labelledby="shopDropdown">
-                                <a class="dropdown-item" href="{% url 'all_shoes' %}">All shoes</a>
-                                <a class="dropdown-item" href="#">Men</a>
-                                <a class="dropdown-item" href='#'>Women</a>
-                            </div>
-                        </li> 
                         <li class="nav-item">
-                                <a class="nav-link" href="{% url 'view_cart' %}">Cart</a>
+                            <a class="nav-link" href="{% url 'all_shoes' %}"><i class="fas fa-male"></i><i class="fas fa-female"></i> All Shoes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pages/blog">Blog</a>
+                            <a class="nav-link" href="{% url 'all_shoes' %}"><i class="fas fa-male"></i> Mens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'all_shoes' %}"><i class="fas fa-female"></i> Womens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/blog"><i class="far fa-star"></i> Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/blog"><i class="fas fa-trophy"></i> Races</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About us</a>
                         </li>
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Log out</a>
                         </li>
                         {% else %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{% url 'all_shoes' %}" id="shopDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Shop
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="shopDropdown">
-                                <a class="dropdown-item" href="{% url 'all_shoes' %}">All shoes</a>
-                                <a class="dropdown-item" href="">Flats</a>
-                                <a class="dropdown-item" href="">Pluggers </a>
-                                <a class="dropdown-item" href="">Cross Country Spikes</a>
-                                <a class="dropdown-item" href="">Track Spikes</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pages/blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Login</a>
                         </li>                            
@@ -65,6 +49,11 @@
                             <a class="nav-link" href="{% url 'register' %}">Sign up</a>
                         </li>
                         {% endif %}
+                        <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_cart' %}">
+                                    <i class="fas fa-shopping-basket"></i>
+                                </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -78,16 +67,13 @@
                         <h3>Shop</h3>
                         <ul class="list-unstyled">
                             <li>
+                                <a href="#">All products</a>
+                            </li>
+                            <li>
                                 <a href="#">Mens</a>
                             </li>
                             <li>
                                 <a href="#">Womens</a>
-                            </li>
-                            <li>
-                                <a href="#">Spike packets</a>
-                            </li>
-                            <li>
-                                <a href="#">All products</a>
                             </li>
                         </ul>
                     </div>
@@ -109,6 +95,9 @@
                             <li>
                                 <a href="#">Privacy policy</a>
                             </li>
+                            <li>
+                                <a href="#">Terms and Conditions</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col">
@@ -116,6 +105,12 @@
                         <p>Sign up to our email list:</p>
                         <input type="email" name="mailinglist" id="">
                     </div>
+                </div>
+                <div>
+                    <i class="fab fa-strava"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
                 </div>
             </div>
         </footer>

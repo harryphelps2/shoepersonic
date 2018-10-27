@@ -20,6 +20,6 @@
     {{ login_form|crispy }}
     <button type="submit">Login</button>
 </form>
-<a href="{% url 'password_reset'%}"><small>Reset password</small></a>
+<a href="{% url 'password_reset'%}"><small>Reset password</small></a>or<a href="{% url 'register'%}"><small>sign up</small></a> 
 
 {% endblock %}
