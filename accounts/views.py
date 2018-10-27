@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserLoginForm, UserRegistrationForm
+from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -40,7 +40,6 @@ def user_registration(request):
     
     if request.method=="POST":
         registration_form = UserRegistrationForm(request.POST)
-
         if registration_form.is_valid():
             registration_form.save()
             user = auth.authenticate(username=request.POST['username'],
@@ -54,4 +53,17 @@ def user_registration(request):
     else:
         registration_form = UserRegistrationForm()
     return render(request, 'register.html', {"registration_form": registration_form})
-    
+
+@login_required
+def view_profile(request):
+    if request.user.is_authenticated:
+        user = request.user
+        return render(request, 'profile.html', {'user': user})
+    else:
+        return redirect(reverse('user_login'))
+
+@login_required
+def edit_profile(request):
+    user = request.user
+    profile_form = ProfileForm()
+    return render(request, 'edit_profile.html', {"user": user, "profile_form": profile_form})
