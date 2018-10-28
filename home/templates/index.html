@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
-<div class="container-fluid homepage-text">
-    <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
-    <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
-    <a class="btn btn-primary" href="{% url 'all_shoes' %}">Shop</a>
-</div>
-<div class="container hero-image-container">
-    <div class="text-center hero-image-container__front-page-image">
+<div class="container-fluid">
+        <div class="front-page-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ MEDIA_URL }}homepage_comp.jpg');">
+            <div class="front-page-text">
+                <h1 class="display-4">Shoepersonic</h1>
+                <p>We try out shoes so you don't have to.</p>
+                <button class="btn btn-primary">Shop now</button>
+            </div>
+        </div>
+    <div class="row">
+        <div class="front-page-about-us">
+            <h2>Who are we?</h2>
+            <p>I love running. I run to work throughout the week and then 
+                race around the Great British Countryside all weekend. I've always struggled to find stock of 
+                the fastest running shoes in one place. Whenever I go into a running shop they always have very limited choice of 
+                racing shoes and whenever I look online the choice is overwhelming but there is never enough detail about the shoe and what they are 
+                like to run in for me to make an informed decision. I set up this shop to change that. We take the leading 
+                models of a particular type of shoe and go and run around in them... a lot. We then report back on the best aspects of
+                each shoe to help you make the best investment and race the fastest.
+            </p>
+            <p>
+                Our pricing fairly reflects the cost of selling the shoe to you. We're a small family run business and we do't have 
+                any economies of scale. We buy all the shoes we test and seek to highlight there best features so you can make an informed decision.
+            </p>
+        </div>
     </div>
 </div>
-<div class="front-page-about-us">
-    <h2>Who are we?</h2>
-    <p>I love running. I run to work throughout the week and then 
-        race around the Great British Countryside all weekend. I've always struggled to find stock of 
-        the fastest running shoes in one place. Whenever I go into a running shop they always have very limited choice of 
-        racing shoes and whenever I look online the choice is overwhelming but there is never enough detail about the shoe and what they are 
-        like to run in for me to make an informed decision. I set up this shop to change that. We take the leading 
-        models of a particular type of shoe and go and run around in them... a lot. We then report back on the best aspects of
-        each shoe to help you make the best investment and race the fastest.
-    </p>
-    <p>
-        Our pricing fairly reflects the cost of selling the shoe to you. We're a small family run business and we do't have 
-        any economies of scale. We buy all the shoes we test and seek to highlight there best features so you can make an informed decision.
-    </p>
-</div>
-{% endblock %}
+    {% endblock %}

@@ -1,4 +1,8 @@
 /* General */
+.body, html {
+  height: 100%;
+}
+
 .footer__links {
   padding-top: 1%;
   margin-top: 7%;
@@ -39,36 +43,21 @@
   background-color: #fefde5 !important;
 }
 
-/* Home Page */
-.homepage-text {
+.front-page-image {
+  height: 50rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
-  margin-top: 13%;
-  text-align: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
-.hero-image-container {
-  max-width: 930px;
-  display: flex;
-}
-.hero-image-container__front-page-image {
-  background-image: url("../../media/homepage_comp.jpg");
-  background-repeat: no-repeat;
-  height: 50%;
-  width: 100%;
-  padding-top: 70%;
-}
-@media (min-width: 768px) {
-  .hero-image-container__front-page-image {
-    background-image: url("../../media/homepage_comp.jpg");
-    background-repeat: no-repeat;
-    height: 0;
-    width: 100%;
-    padding-top: 70%;
-  }
+.front-page-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: white;
 }
 
 /* Shoe Detail Page */
