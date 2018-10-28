@@ -1,42 +1,22 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
 <h1>Check out these shoes</h1>
-<div class="card-group">
-    {% for shoe in all_shoes %}
-        <div class="card text-white bg-dark">
-            <div class="card-header">
-                <a href="{% url 'shoe_detail' shoe_id=shoe.pk %}">
-                    <h2 class="card-title">{{shoe.brand}} {{ shoe.name }}</h2>
-                </a>
-            </div>
-            <div class="container">
-                    {% for shoe in all_shoes %}
-                    <div class="card bg-dark text-black">
-                        <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
-                        <a href="{% url 'shoe_detail' shoe.id %}">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
-                                <p class="card-text">{{ shoe.strapline }}</p>
-                            </div>
-                        </a> 
-                    </div>
-                    {% endfor %}
+<div class="container-fluid">
+    <div class="row">
+        {% for shoe in all_shoes %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-0">
+            <div class="card">
+                <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}" style="height: 230px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
+                    <p class="card-text">{{ shoe.strapline }}</p>
                 </div>
-            <div class="card-body">
-                <a href="{% url 'shoe_detail' shoe.id %}">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
-                </a>
-                <p class="card-text">{{ shoe.description|truncatewords:20 }}<a href="{% url 'shoe_detail' shoe.id %}">Read more</a></p>
-                <button class="minus" disabled>-</button>
-                <span class="quantity" name="quantity">1</span>
-                <button class="plus">+</button>
-                <form action="#" method="post">
-                    {% csrf_token %}
-                    <button class="add-to-cart" type="submit" value="1" name="quantity">Add to Cart</button>
-                </form>
-                <h4>£{{ shoe.price }}</h4>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
             </div>
         </div>
-    {% endfor %} 
-</div>    
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

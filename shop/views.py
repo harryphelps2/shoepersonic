@@ -5,22 +5,10 @@ def all_shoes(request):
     """
     View to show all shoes.
     """
-    all_shoes = Shoe.objects.all()
-    return render(request, 'all_shoes.html', {'all_shoes':all_shoes})
-
-def shoes_for_him(request):
-    """
-    View track spikes.
-    """
-    track_spikes = Shoe.objects.filter(shoe_type="track spikes")
-    return render(request, 'track_spikes.html', {'track_spikes':track_spikes})
-
-def shoes_for_her(request):
-    """
-    View xc spikes.
-    """
-    xc_spikes = Shoe.objects.filter(shoe_type="cross country spikes")
-    return render(request, 'xc_spikes.html', {'xc_spikes':xc_spikes})
+    all_shoes = Shoe.objects.all().order_by('weight_ranking')
+    lightweight = Shoe.objects.exclude(weight_ranking__gt=3)
+    supportive = Shoe.objects.exclude(weight_ranking__lte=3) 
+    return render(request, 'all_shoes.html', {'all_shoes':all_shoes, 'lightweight': lightweight, 'supportive': supportive })
 
 def shoe_detail(request, id):
     """
