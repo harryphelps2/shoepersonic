@@ -1,26 +1,13 @@
 {% extends 'base.html' %}
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
-<div class="container-fluid">
-    <div class="text-center front-page-image" style="background-image: url('static/img/all_shoes_in_line.JPG')">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
-            <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
-        </div>
-    </div>
+<div class="container-fluid homepage-text">
+    <h1 class="display-4 font-weight-normal">Shoepersonic</h1>
+    <p class="lead font-weight-normal">We try out shoes so you don't have to.</p>
 </div>
-<div class="container">
-    {% for shoe in all_shoes %}
-    <div class="card bg-dark text-black">
-        <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
-        <a href="{% url 'shoe_detail' shoe.id %}">
-            <div class="card-img-overlay">
-                <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
-                <p class="card-text">{{ shoe.strapline }}</p>
-            </div>
-        </a> 
+<div class="container hero-image-container">
+    <div class="text-center hero-image-container__front-page-image" style="background-image: url('media/homepage_comp.jpg')">
     </div>
-    {% endfor %}
 </div>
 <div class="front-page-about-us">
     <h2>Who are we?</h2>
@@ -31,7 +18,8 @@
         like to run in for me to make an informed decision. I set up this shop to change that. We take the leading 
         models of a particular type of shoe and go and run around in them... a lot. We then report back on the best aspects of
         each shoe to help you make the best investment and race the fastest.
-
+    </p>
+    <p>
         Our pricing fairly reflects the cost of selling the shoe to you. We're a small family run business and we do't have 
         any economies of scale. We buy all the shoes we test and seek to highlight there best features so you can make an informed decision.
     </p>

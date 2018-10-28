@@ -9,6 +9,19 @@
                     <h2 class="card-title">{{shoe.brand}} {{ shoe.name }}</h2>
                 </a>
             </div>
+            <div class="container">
+                    {% for shoe in all_shoes %}
+                    <div class="card bg-dark text-black">
+                        <img class="card-img" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="Card image">
+                        <a href="{% url 'shoe_detail' shoe.id %}">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
+                                <p class="card-text">{{ shoe.strapline }}</p>
+                            </div>
+                        </a> 
+                    </div>
+                    {% endfor %}
+                </div>
             <div class="card-body">
                 <a href="{% url 'shoe_detail' shoe.id %}">
                     <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
