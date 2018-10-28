@@ -77,6 +77,11 @@ footer .footer-contents {
   margin: 10%;
 }
 
+.profile__picture {
+  height: auto;
+  width: 10%;
+}
+
 .cart__row {
   padding: 2% 5%;
 }

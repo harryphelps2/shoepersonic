@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h1>Profile</h1>
-<p>{{ user.profile.marketing_opt_in }}</p>
+<div class="container profile">
+    <h1 class="profile__heading">Profile</h1>
+    <p>Username: {{ user.username }}</p>
+    <img class="profile__picture" src="{{ MEDIA_URL }}{{ user.profile.profile_picture }}" alt="{{ user.profile.profile_picture }}">
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Opted in to marketing emails: {{ user.profile.marketing_opt_in }}</p>
+    <p>Achievements: {{ user.profile.achievements }}</p>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+</div>
 {% endblock %}

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h2>{{ user.username }}</h2>
-<h1>Profile</h1>
-{{ profile_form|crispy }}
+<h1>Edit Profile</h1>
+<form action="{% url 'edit_profile' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form|crispy }}
+    {{ profile_form|crispy }}
+    <button type="submit">Make changes</button>
+</form>
 {% endblock %}

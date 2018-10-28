@@ -90,6 +90,15 @@ footer{
       margin: 10%;
   }
 
+//   Profile page
+
+  .profile{
+      &__picture{
+          height: auto;
+          width: 10%;
+      }
+  }
+
 //   Cart
 
 .cart{
@@ -103,9 +112,5 @@ footer{
     &__adjust{
         width: 80%;
         margin-left: 2%;
-
-        &__quantity{
-            
-        }
     }
 }

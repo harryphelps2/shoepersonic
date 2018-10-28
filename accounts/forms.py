@@ -13,6 +13,11 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ('marketing_opt_in','running_club','profile_picture','achievements')
 
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+
 class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(label="",widget=forms.TextInput(attrs={'placeholder':'Choose a username'}))
     email = forms.CharField(label="",widget=forms.EmailInput(attrs={'placeholder':'Email please'}))
