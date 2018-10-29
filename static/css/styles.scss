@@ -63,6 +63,21 @@
         left: 50%;
         transform: translate(-50%, -100%);
         color: white;
+
+        &__title{
+            font-size: 2.5rem;
+            font-weight: 200;
+            line-height: 1.2;
+    }
+}
+@media (min-width: 576px) { 
+    .front-page-text{
+        &__title{
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+    }
 }
 
   /* Shoe Detail Page */
