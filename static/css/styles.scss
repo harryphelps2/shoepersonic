@@ -5,6 +5,12 @@
 // Footer
 
 .footer{
+    background-color: dimgray;
+    color: white;
+
+    a{
+        color: inherit;
+    }
     &__links{
         padding-top: 1%;
         margin-top: 7%;
@@ -49,7 +55,7 @@
 
 // Home page
 .front-page-image{
-    height: 50rem;
+    height: 60rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -79,6 +85,16 @@
         }
     }
 }
+
+  /* All shoes page */
+
+  .shoe-card{
+      padding: 1%;
+      margin: 2%;
+
+      
+  }
+ 
 
   /* Shoe Detail Page */
 

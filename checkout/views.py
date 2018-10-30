@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
 from django.contrib import messages
 from django.utils import timezone
-from shop.models import Shoe, StockLevel
+from shop.models import Shoe
 from .models import OrderLineItem
 from shoepersonic import settings
 import stripe

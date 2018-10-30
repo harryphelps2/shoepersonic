@@ -1,18 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Check out these shoes</h1>
+<h1>Click for more details...</h1>
 <div class="container-fluid">
     <div class="row">
         {% for shoe in all_shoes %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-0">
-            <div class="card">
-                <img class="card-img-top" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}" style="height: 230px;">
-                <div class="card-body">
+            <div class="card shoe-card">
+                <img class="card-img-top shoe-card__image" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
+                <div class="card-body shoe-card__text">
                     <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
                     <p class="card-text">{{ shoe.strapline }}</p>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                <div class="card-footer shoe-card__add-to-basket">
+                    <form id="cartform" action="{% url 'add_to_cart' shoe.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <div class="input-group-prepend size-chooser">
+                                <label class="input-group-text" for="inputGroupSelect01">Size</label>
+                                <select form="cartform" required name="size" class="custom-select" id="inputGroupSelect01">
+                                    {% for shoe_stock in stock_level %}
+                                    <option value="{{ shoe_stock.size }}" {% if shoe == current_shoe %}selected{% endif %} >{{ shoe_stock.size }} ({{ shoe_stock.stock }} left)</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-danger" type="submit" value="1" name="quantity">Add to Cart</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Shoe, StockLevel
+from .models import Shoe
 
 def all_shoes(request):
     """

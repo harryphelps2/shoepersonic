@@ -35,21 +35,14 @@ class Shoe(models.Model):
     primary_image = models.ImageField(null=True, blank=True)
     blog_link = models.CharField(max_length=200, null=True, blank=True)
 
-
-
     def __str__(self):
         return self.name
-    
-    
-class StockLevel(models.Model):
-    shoe_model = models.ForeignKey(Shoe, on_delete=models.SET_NULL, null=True)
-    size = models.IntegerField(default=10,
-        validators=[MaxValueValidator(15), MinValueValidator(1)], null=True)
-    stock = models.IntegerField(default=10, primary_key=True)
 
-    def __str__(self):
-        stock_entry = "{0} size {1} has {2} left".format(self.shoe_model, self.size, self.stock)
-        return stock_entry
+class Stock(models.Model):
+    model = models.ForeignKey(Shoe, on_delete=models.CASCADE)
+    size = models.IntegerField()
+    stock = models.IntegerField() 
+
 
 class ProductImage(models.Model):
    shoe_model = models.ForeignKey(Shoe, on_delete=models.SET_NULL, null=True)
