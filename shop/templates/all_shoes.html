@@ -11,21 +11,8 @@
                     <h5 class="card-title">{{ shoe.brand }} {{ shoe.name }}</h5>
                     <p class="card-text">{{ shoe.strapline }}</p>
                 </div>
-                <div class="card-footer shoe-card__add-to-basket">
-                    <form id="cartform" action="{% url 'add_to_cart' shoe.id %}" method="post">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <div class="input-group-prepend size-chooser">
-                                <label class="input-group-text" for="inputGroupSelect01">Size</label>
-                                <select form="cartform" required name="size" class="custom-select" id="inputGroupSelect01">
-                                    {% for shoe_stock in stock_level %}
-                                    <option value="{{ shoe_stock.size }}" {% if shoe == current_shoe %}selected{% endif %} >{{ shoe_stock.size }} ({{ shoe_stock.stock }} left)</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <button class="btn btn-danger" type="submit" value="1" name="quantity">Add to Cart</button>
-                    </form>
+                <div class="card-footer shoe-card__footer">
+                    <a href="{% url 'shoe_detail' shoe.id %}" class="btn btn-primary btn-danger btn-block">Show me more</a>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@ class Shoe(models.Model):
 
 class Stock(models.Model):
     model = models.ForeignKey(Shoe, on_delete=models.CASCADE)
-    size = models.IntegerField()
+    size = models.DecimalField(max_digits=5, decimal_places=2)
     stock = models.IntegerField() 
 
 
