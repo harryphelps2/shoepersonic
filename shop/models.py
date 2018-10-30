@@ -43,6 +43,10 @@ class Stock(models.Model):
     size = models.DecimalField(max_digits=5, decimal_places=2)
     stock = models.IntegerField() 
 
+    def __str__(self):
+        stockline = "{0} - {1}: {2} left".format(self.model.name, self.size, self.stock)
+        return stockline
+
 
 class ProductImage(models.Model):
    shoe_model = models.ForeignKey(Shoe, on_delete=models.SET_NULL, null=True)
