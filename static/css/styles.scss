@@ -91,14 +91,27 @@
   .shoe-card{
       padding: 1%;
       margin: 2%;
-
-      
   }
  
 
   /* Shoe Detail Page */
 
-  .add-to-cart-card{
+  .shoe-detail{
+      display: block;
+      width: 100%;
+
+      &__title{
+          margin: auto;
+      }
+
+      &__image{
+          width: 100%;
+      }
+  }
+
+  .add-to-cart{
+      display: block;
+      width: 100%;
       margin: 5%;
   }
 
@@ -106,13 +119,11 @@
 
     .price {
         width: 50%;
+        padding-left: 5%;
         }
 
     .quantity-chooser{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 5%;
+        width: 50%;
 
         button{
         height: 2.0rem;
@@ -129,13 +140,20 @@
     }
     }
 
+  .size-chooser-container{
+      margin: 5%;
+  }
+
   .size-chooser{
       margin-bottom: 5%;
   }
 
   .add-to-cart-button{
-      margin: 10%;
+      margin-top: 5%;
+      width: 100%
   }
+
+
 
 //   Profile page
 

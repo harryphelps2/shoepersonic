@@ -86,18 +86,29 @@
 }
 
 /* Shoe Detail Page */
-.add-to-cart-card {
+.shoe-detail {
+  display: block;
+  width: 100%;
+}
+.shoe-detail__title {
+  margin: auto;
+}
+.shoe-detail__image {
+  width: 100%;
+}
+
+.add-to-cart {
+  display: block;
+  width: 100%;
   margin: 5%;
 }
 
 .price-and-quantity-container .price {
   width: 50%;
+  padding-left: 5%;
 }
 .price-and-quantity-container .quantity-chooser {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 5%;
+  width: 50%;
 }
 .price-and-quantity-container .quantity-chooser button {
   height: 2rem;
@@ -111,12 +122,17 @@
   margin: 5%;
 }
 
+.size-chooser-container {
+  margin: 5%;
+}
+
 .size-chooser {
   margin-bottom: 5%;
 }
 
 .add-to-cart-button {
-  margin: 10%;
+  margin-top: 5%;
+  width: 100%;
 }
 
 .profile__picture {
