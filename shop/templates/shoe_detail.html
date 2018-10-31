@@ -3,10 +3,11 @@
 {% block page_title %}Shoepersonic{% endblock %}
 {% block content %}
 <div class="container-fluid shoe-detail">
+
     <h1 class="shoe-detail__title">{{ shoe.brand }} {{ shoe.name }}</h1>
     <img class="shoe-detail__image" src="{{ MEDIA_URL }}{{ shoe.primary_image }}" alt="{{ shoe.brand }} {{ shoe.name }}">
     <div class="add-to-cart">
-        <div class="row price-and-quantity-container">
+        <div class="price-and-quantity-container">
             <div class="price">
                 <h3>£{{ shoe.price }}</h3>
             </div>

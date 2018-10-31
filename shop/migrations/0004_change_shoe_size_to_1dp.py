@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('shop', '0003_auto_20181030_0844'),
+        ('shop', '0003_change_stock_to_decimal_field'),
     ]
 
     operations = [

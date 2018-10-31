@@ -96,19 +96,41 @@
 .shoe-detail__image {
   width: 100%;
 }
+@media (min-width: 576px) {
+  .shoe-detail__image {
+    display: inline-block;
+    width: 60%;
+  }
+}
 
 .add-to-cart {
   display: block;
   width: 100%;
   margin: 5%;
 }
+@media (min-width: 576px) {
+  .add-to-cart {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+    padding-left: 10%;
+  }
+}
 
+@media (min-width: 576px) {
+  .price-and-quantity-container {
+    width: 100%;
+  }
+}
 .price-and-quantity-container .price {
-  width: 50%;
-  padding-left: 5%;
+  display: inline-block;
+  width: 40%;
+  padding-left: 4%;
 }
 .price-and-quantity-container .quantity-chooser {
-  width: 50%;
+  display: inline-block;
+  width: 40%;
+  min-width: 7rem;
 }
 .price-and-quantity-container .quantity-chooser button {
   height: 2rem;
